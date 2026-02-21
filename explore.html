@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexlance · Explore Jobs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        :root {
+            --white: #ffffff;
+            --blue-400: #4a80f0;
+            --blue-500: #2A6DF4;
+            --blue-600: #1e5ad9;
+            --green-400: #34C759;
+            --green-500: #10B981;
+            --green-600: #0e9e6e;
+            --gray-200: #eef2f6;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --shadow-card: 0 25px 40px -18px rgba(0, 40, 80, 0.15);
+        }
+
+        body {
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .navbar {
+            background: var(--white);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo-blue {
+            color: var(--blue-500);
+        }
+
+        .logo-green {
+            color: var(--green-500);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-800);
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-500);
+            border-bottom-color: var(--blue-400);
+        }
+
+        .nav-links a.active {
+            color: var(--blue-600);
+            border-bottom-color: var(--green-500);
+        }
+
+        .btn {
+            padding: 10px 26px;
+            border-radius: 60px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-blue {
+            background: transparent;
+            border: 1.5px solid var(--blue-400);
+            color: var(--blue-500);
+        }
+
+        .btn-green {
+            background: var(--green-500);
+            color: white;
+        }
+
+        .page {
+            padding: 60px 0;
+            flex: 1;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 32px;
+            border-left: 8px solid var(--green-400);
+            padding-left: 24px;
+            color: var(--blue-600);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .job-card {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(42, 109, 244, 0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+
+        .badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--green-600);
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 60px;
+            display: inline-block;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 14px 0;
+        }
+
+        .tag {
+            background: rgba(74, 128, 240, 0.1);
+            color: var(--blue-600);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+        }
+
+        .green-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--green-500);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .footer {
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--gray-600);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-blue">Nex</span><span class="logo-green">lance</span>
+            </a>
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="explore.html" class="active">Explore jobs</a>
+                <a href="getjobs.html">Get jobs</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact us</a>
+                <a href="login.html">Login</a>
+            </nav>
+            <div>
+                <a href="#" class="btn btn-outline-blue">Sign in</a>
+                <a href="#" class="btn btn-green" style="margin-left:10px;">Post project</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <h2>Explore jobs</h2>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div
+                    style="min-width:220px; background: white; border-radius: 32px; padding: 24px; box-shadow: var(--shadow-card);">
+                    <h4 style="color: var(--blue-500);">Filter</h4>
+                    <div style="margin:20px 0;"><span style="color:var(--green-500);">✓</span> remote</div>
+                    <div><span style="color:var(--green-500);">✓</span> full‑time</div>
+                </div>
+                <div style="flex:3;">
+                    <div class="card-grid">
+                        <div class="job-card">
+                            <img class="card-img"
+                                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&auto=format"
+                                alt="pm">
+                            <h3>Product manager</h3>
+                            <div class="badge">$9k-12k</div>
+                            <div class="tag-list">
+                                <span class="tag">agile</span>
+                                <span class="tag">fintech</span>
+                            </div>
+                            <span class="green-dot"></span> 8 bids
+                        </div>
+                        <div class="job-card">
+                            <img class="card-img"
+                                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&auto=format"
+                                alt="devops">
+                            <h3>DevOps</h3>
+                            <div class="badge">$10k-15k</div>
+                            <div class="tag-list">
+                                <span class="tag">AWS</span>
+                                <span class="tag">k8s</span>
+                            </div>
+                            <span class="green-dot"></span> new
+                        </div>
+                        <div class="job-card">
+                            <img class="card-img"
+                                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&auto=format"
+                                alt="design">
+                            <h3>Graphic designer</h3>
+                            <div class="badge">$4k-6k</div>
+                            <div class="tag-list">
+                                <span class="tag">Illustrator</span>
+                                <span class="tag">branding</span>
+                            </div>
+                            <span class="green-dot"></span> open
+                        </div>
+                        <div class="job-card">
+                            <img class="card-img"
+                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format"
+                                alt="data">
+                            <h3>Data scientist</h3>
+                            <div class="badge">$12k-16k</div>
+                            <div class="tag-list">
+                                <span class="tag">Python</span>
+                                <span class="tag">ML</span>
+                            </div>
+                            <span class="green-dot"></span> 3 bids
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Nexlance — white, blue & green platform. All images from Unsplash (free).</p>
+        </div>
+    </footer>
+</body>
+
+</html>

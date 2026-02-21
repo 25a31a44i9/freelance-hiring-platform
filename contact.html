@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexlance · Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        :root {
+            --white: #ffffff;
+            --off-white: #f9fcff;
+            --blue-500: #2A6DF4;
+            --blue-600: #1e5ad9;
+            --green-400: #34C759;
+            --green-500: #10B981;
+            --gray-200: #eef2f6;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --shadow-card: 0 25px 40px -18px rgba(0, 40, 80, 0.15);
+        }
+
+        body {
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: var(--white);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo-blue {
+            color: var(--blue-500);
+        }
+
+        .logo-green {
+            color: var(--green-500);
+        }
+
+        /* Navigation UL Styles */
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            font-weight: 500;
+            align-items: center;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: var(--gray-800);
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu ul li a:hover {
+            color: var(--blue-500);
+            border-bottom-color: var(--blue-500);
+        }
+
+        .nav-menu ul li a.active {
+            color: var(--blue-600);
+            border-bottom-color: var(--green-500);
+        }
+
+        .btn {
+            padding: 10px 26px;
+            border-radius: 60px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-blue {
+            background: transparent;
+            border: 1.5px solid var(--blue-500);
+            color: var(--blue-500);
+        }
+
+        .btn-outline-blue:hover {
+            background: var(--blue-500);
+            color: white;
+        }
+
+        .btn-green {
+            background: var(--green-500);
+            color: white;
+        }
+
+        .btn-green:hover {
+            background: var(--green-400);
+        }
+
+        .page {
+            padding: 60px 0;
+            flex: 1;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 32px;
+            border-left: 8px solid var(--green-400);
+            padding-left: 24px;
+            color: var(--blue-600);
+            font-weight: 700;
+        }
+
+        /* Contact Form Styles */
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+            background: white;
+            border-radius: 48px;
+            padding: 48px;
+            box-shadow: var(--shadow-card);
+            flex-wrap: wrap;
+        }
+
+        .contact-image {
+            flex: 1;
+        }
+
+        .contact-image img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 20px;
+        }
+
+        .location-info {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-600);
+            font-size: 1.1rem;
+        }
+
+        .location-info i {
+            color: var(--green-500);
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            flex: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .login-field {
+            width: 100%;
+            padding: 16px 22px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: 60px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .login-field:focus {
+            border-color: var(--blue-500);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42, 109, 244, 0.1);
+        }
+
+        textarea.login-field {
+            border-radius: 30px;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Info Cards */
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .info-card {
+            flex: 1;
+            min-width: 200px;
+            background: var(--off-white);
+            padding: 24px;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: var(--blue-500);
+            margin-bottom: 15px;
+        }
+
+        .info-card h4 {
+            color: var(--gray-800);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: var(--gray-600);
+        }
+
+        .footer {
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--gray-600);
+        }
+
+        /* Success/Error Messages (PHP) */
+        .message {
+            padding: 15px 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .nav-menu ul li {
+                width: 100%;
+            }
+
+            .btn-group {
+                margin-top: 16px;
+            }
+
+            .contact-grid {
+                padding: 24px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.php" class="logo">
+                <span class="logo-blue">Nex</span><span class="logo-green">lance</span>
+            </a>
+
+            <!-- Navigation using UL -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="explore.php">Explore jobs</a></li>
+                    <li><a href="getjobs.php">Get jobs</a></li>
+                    <li><a href="projects.php">Projects</a></li>
+                    <li><a href="about.php">About us</a></li>
+                    <li><a href="contact.php" class="active">Contact us</a></li>
+                    <li><a href="login.php">Login</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-group">
+                <a href="register.php" class="btn btn-outline-blue">Sign in</a>
+                <a href="post-project.php" class="btn btn-green" style="margin-left:10px;">Post project</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <h2>Contact us</h2>
+
+            <!-- PHP Message Display -->
+            <?php
+            // This will be populated when form is submitted
+            if (isset($_GET['success']) && $_GET['success'] == 1) {
+                echo '<div class="message success" style="display: block;">Thank you! Your message has been sent successfully.</div>';
+            }
+            if (isset($_GET['error']) && $_GET['error'] == 1) {
+                echo '<div class="message error" style="display: block;">Sorry, there was an error sending your message. Please try again.</div>';
+            }
+            ?>
+
+            <div class="contact-grid">
+                <div class="contact-image">
+                    <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=600&auto=format"
+                        alt="Our office space">
+                    <div class="location-info">
+                        <i class="fas fa-map-pin"></i>
+                        <span>548 Market Street, San Francisco, CA 94104</span>
+                    </div>
+
+                    <!-- Quick Contact Info -->
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Us</h4>
+                            <p>hello@nexlance.com</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Working Hours</h4>
+                            <p>Mon-Fri: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <!-- Contact Form - Submits to itself for processing -->
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF"]); ?>">
+                        <div class="form-group">
+                            <input class="login-field" type="text" name="name" placeholder="Your Full Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="login-field" type="email" name="email" placeholder="Your Email Address"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="login-field" type="text" name="subject" placeholder="Subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="login-field" name="message" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" name="submit" class="btn btn-green submit-btn">
+                            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                            Send Message
+                        </button>
+                    </form>
+
+                    <?php
+                    // PHP Form Processing
+                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+                        $name = htmlspecialchars($_POST['name']);
+                        $email = htmlspecialchars($_POST['email']);
+                        $subject = htmlspecialchars($_POST['subject']);
+                        $message = htmlspecialchars($_POST['message']);
+                        
+                        // Basic validation
+                        if (!empty($name) && !empty($email) && !empty($message) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            
+                            // Here you would typically:
+                            // 1. Save to database
+                            // 2. Send email notification
+                            // 3. etc.
+                            
+                            // For now, just redirect with success message
+                            header("Location: contact.php?success=1");
+                            exit();
+                        } else {
+                            header("Location: contact.php?error=1");
+                            exit();
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+
+            <!-- Map Section (Optional) -->
+            <div style="margin-top: 48px; border-radius: 32px; overflow: hidden; height: 300px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086567853977!2d-122.40599968468154!3d37.78599817975757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807d3b8b5f2b%3A0x6b4f5b5b5b5b5b5b!2s548%20Market%20St%2C%20San%20Francisco%2C%20CA%2094104!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Nexlance — white, blue & green platform. All rights reserved.</p>
+            <div style="margin-top: 16px;">
+                <a href="#" style="color: var(--gray-600); margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: var(--gray-600); margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--gray-600); margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: var(--gray-600); margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
