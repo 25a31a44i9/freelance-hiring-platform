@@ -1,0 +1,183 @@
+<?php
+// You can add PHP logic here if needed
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexlance - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Copy the same styles from about.php */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        :root {
+            --white: #ffffff;
+            --off-white: #f9fcff;
+            --blue-500: #2A6DF4;
+            --blue-600: #1e5ad9;
+            --green-400: #34C759;
+            --green-500: #10B981;
+            --gray-200: #eef2f6;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .navbar {
+            background: var(--white);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo-blue {
+            color: var(--blue-500);
+        }
+
+        .logo-green {
+            color: var(--green-500);
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            font-weight: 500;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: var(--gray-800);
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-menu ul li a:hover {
+            color: var(--blue-500);
+            border-bottom-color: var(--blue-500);
+        }
+
+        .nav-menu ul li a.active {
+            color: var(--blue-600);
+            border-bottom-color: var(--green-500);
+        }
+
+        .btn {
+            padding: 10px 26px;
+            border-radius: 60px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-blue {
+            background: transparent;
+            border: 1.5px solid var(--blue-500);
+            color: var(--blue-500);
+        }
+
+        .btn-green {
+            background: var(--green-500);
+            color: white;
+        }
+
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--blue-600);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer {
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: 32px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.php" class="logo">
+                <span class="logo-blue">Nex</span><span class="logo-green">lance</span>
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="home.php" class="active">Home</a></li>
+                    <li><a href="explore.php">Explore jobs</a></li>
+                    <li><a href="getjobs.php">Get jobs</a></li>
+                    <li><a href="projects.php">Projects</a></li>
+                    <li><a href="about.php">About us</a></li>
+                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="login.php">Login</a></li>
+                </ul>
+            </nav>
+            <div>
+                <a href="register.php" class="btn btn-outline-blue">Sign in</a>
+                <a href="post-project.php" class="btn btn-green" style="margin-left:10px;">Post project</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container hero">
+            <h1>Welcome to Nexlance</h1>
+            <p>Connect with top freelancers and find amazing opportunities</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Nexlance. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
